@@ -8,7 +8,7 @@ import (
 
 func main() {
 	r := rand.New(rand.NewSource(time.Now().UnixNano()))
-	secretNumber := r.Intn(100) + 1
+	n := r.Intn(100) + 1
 	var guess int
 	attempts := 0
 
@@ -20,9 +20,9 @@ func main() {
 
 		attempts++
 
-		if guess < secretNumber {
+		if guess < n {
 			fmt.Println("too low")
-		} else if guess > secretNumber {
+		} else if guess > n {
 			fmt.Println("too high")
 		} else {
 			fmt.Printf("correct You guessed the number in %d attempts.\n", attempts)
