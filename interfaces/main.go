@@ -46,6 +46,9 @@ func main() {
 
 	car.Details()
 	truck.Details()
+
+	printables := []Printable{car, truck}
+	PrintAll(printables)
 }
 
 func PrintAll(printables []Printable) {
