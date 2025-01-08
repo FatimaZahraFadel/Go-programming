@@ -41,8 +41,8 @@ func main() {
 		PayloadCapacity: 1000,
 	}
 
-	car.CalculateInsurance()
-	truck.CalculateInsurance()
+	println("Car Insurance:", car.CalculateInsurance())
+	println("Truck Insurance:", truck.CalculateInsurance())
 
 	car.Details()
 	truck.Details()
