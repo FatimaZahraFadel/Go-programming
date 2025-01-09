@@ -120,21 +120,9 @@ func studentHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	switch r.Method {
-	case "POST":
-		var student Student
-		if err := json.NewDecoder(r.Body).Decode(&student); err != nil {
-			http.Error(w, "bad request", http.StatusBadRequest)
-			return
-		}
-		createdStudent := store.Create(student)
-		w.Header().Set("Content-Type", "application/json")
-		w.WriteHeader(http.StatusCreated)
-		json.NewEncoder(w).Encode(createdStudent)
+	
+	
 	case "GET":
-		students := store.GetAll()
-		w.Header().Set("Content-Type", "application/json")
-		json.NewEncoder(w).Encode(students)
-	case "GETBYID":
 		if student, found := store.GetByID(id); found {
 			w.Header().Set("Content-Type", "application/json")
 			json.NewEncoder(w).Encode(student)
